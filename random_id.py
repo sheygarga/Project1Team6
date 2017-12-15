@@ -14,9 +14,9 @@ def get_random_user(loc=None):
     word=random_word()
     tweets=api.search(q=word, rpp=100, count=1000)
     count=tweets.get("search_metadata").get("count")
-    index=random.randint(1,count)
+    index=random.randint(1,count)-1
     if tweets.get("statuses"):
-        user_id=tweets.get("statuses")[index-1].get('user').get('id')
+        user_id=tweets.get("statuses")[index].get('user').get('id')
     else:
         return None
     return user_id
