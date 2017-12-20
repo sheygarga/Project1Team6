@@ -31,8 +31,11 @@ urls = [url1,url2,url3,url4,url5,url6]
 
 #url = "http://www.zillow.com/webservice/GetRegionChildren.htm?zws-id=X1-ZWz1g600175l3f_18y6r&state=wa&city=seattle&childtype=neighborhood"
 
+zindex_list = []
+
 for url in urls:
     zillow_response = req.get(url)
+    temp_zindex = []
 
     with open('zillow_response.xml', 'w') as f:
         f.write(zillow_response.text)
@@ -48,7 +51,15 @@ for url in urls:
         #print(soup.prettify())
         temp_file = json.dumps(parker.data(fromstring(xml_contents)), indent=4 )
         temp2_file = json.loads(temp_file)
-        print(temp2_file['response']['list']['region'][0])
+
+        for loc in temp2_file['response']['list']['region']:
+            if 'zindex' in loc:
+                temp_zindex.append(loc['zindex'])
+        
+        zindex_list.append(temp_zindex)
+        #print(temp2_file['response']['list']['region'])
+
+print(zindex_list)
 
 
 
