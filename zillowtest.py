@@ -1,7 +1,6 @@
 #dependencies
 import requests as req
 import json
-import xmltodict
 from bs4 import BeautifulSoup
 from xml.etree.ElementTree import fromstring
 #import xml.etree.ElementTree as ET
@@ -85,7 +84,30 @@ for cen_loc in cen_calls:
     #gets population and adds it to the pop_list
     census_response = req.get(cen_loc).json()
     pop = int(census_response[1][0])
-    pop_list.append(pop)
+    pop_list.append(pop)  
 
+#new calls for median age and income
+ojai_call2 = "https://api.census.gov/data/2016/acs/acs5?get=B06011_001E,B08103_001E,NAME&for=place:53476&in=state:06"
+san_call2 = "https://api.census.gov/data/2016/acs/acs5?get=B06011_001E,B08103_001E,NAME&for=place:66140&in=state:06"
+bev_call2 =  "https://api.census.gov/data/2016/acs/acs5?get=B06011_001E,B08103_001E,NAME&for=place:06308&in=state:06"
+cres_call2 = "https://api.census.gov/data/2016/acs/acs5?get=B06011_001E,B08103_001E,NAME&for=place:30000&in=state:06"
+lb_call2 = "https://api.census.gov/data/2016/acs/acs5?get=B06011_001E,B08103_001E,NAME&for=place:43000&in=state:06"
+sb_call2 = "https://api.census.gov/data/2016/acs/acs5?get=B06011_001E,B08103_001E,NAME&for=place:69070&in=state:06"
 
-print(pop_list)
+#list of calls
+med_calls = [ojai_call2, san_call2, bev_call2, cres_call2, lb_call2, sb_call2]
+
+#lists to be filled
+med_inc_list = []
+med_age_list = []
+
+#loops through calls, adds the median income and age to the proper list
+for med_loc in med_calls:
+    med_response = req.get(med_loc).json()
+    med_inc = int(med_response[1][0])
+    med_age = float(med_response[1][1])
+    med_inc_list.append(med_inc)
+    med_age_list.append(med_age)
+
+print(med_inc_list)
+print(med_age_list)
