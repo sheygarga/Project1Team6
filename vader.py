@@ -14,7 +14,7 @@ def add_scores(df):
 
 analyzer = SentimentIntensityAnalyzer()
 
-df=pd.read_csv('tweets.csv')
+df=pd.read_csv('tweets2.csv')
 
 
 features=['City','tweet_created_at','hashtags','text','screen_name','user_id',
@@ -26,4 +26,4 @@ df=df.loc[:,features]
 
 df=add_scores(df)
 
-df.to_csv('tweets_with_scores.csv')
+df.to_csv('tweets_with_scores2.csv')

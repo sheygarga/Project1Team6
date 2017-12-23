@@ -48,8 +48,8 @@ def tweets_to_csv(tweets,city='Ojai',filename='tweets.csv'):
 
 
 
-lat='34.421450'
-long='-119.716562'
+lat='34.425192'
+long='-119.705226'
 city='Santa Barbara'
 
 
