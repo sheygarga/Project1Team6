@@ -12,22 +12,22 @@ Raw csv file has 1292498 rows.
  3. Remove null in 'Description';
  4. Remove duplicates.
 
-* ### Count Total Publications per Journal
+* ### Count Publications in Each Journal  
 ![Journal Rank with Publication number](paper_per_j_total.png)  
 
-* ### Total Publications with Tissue Keywords in Title  
+* ### Check Studies Related to Different Tissues Based on Publication Title in All Journals
 ![](Tissue_Rank.png)
 
-* ### Top Journal Publications with Tissue Keywords in Title  
+* ### Check Studies Related to Different Tissues Based on Publication Title in Top Journals (IF>20)  
 ![](Tissue_Rank_Top.png)
 
-* ### Total Publications with Disease Keywords in Title  
+* ### Check Studies Related to Different Diseases Based on Publication Title in All Journals    
 ![](Disease_Rank.png)
 
-* ### Top Journal Publications with Disease Keywords in Title  
+* ### Check Studies Related to Different Diseases Based on Publication Title in Top Journals (IF>20) 
 ![](Disease_Rank_Top.png)
 
-* ### Chinese PI Publication Ratio  
+* ### Chinese PI Publication Ratio in All Journals 
 ![](Chinese_PI_Ratio.png)
 
 * ### Chinese PI Publication Ratio in Top Journals (IF>20)  
@@ -39,5 +39,5 @@ Raw csv file has 1292498 rows.
 * ### Journals Published Most Studies from Chinese PI (Normalized, and Ratio<85%)  
 ![](Norm_Chinese_Pub.png)
 
-* ### Most Frequent words in Publication Titles (use 1000 records, and filtered with words blacklist)  
+* ### Most Frequent Words Appears in Publication Titles (use 1000 records, and filtered with words blacklist)  
 ![](Word_Fre.png)
