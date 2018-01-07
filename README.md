@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Project1Team6
 
 This python project helps display how certain cities and counties in California felt about the significant wildfires such as the Thomas Fire, Rye Fire, Creek Fire, and Skirball Fire.
